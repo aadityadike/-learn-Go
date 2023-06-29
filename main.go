@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/aadityadike/BookYourTicketNow/userInput"
-	"github.com/aadityadike/BookYourTicketNow/userValidation"
+	"github.com/aadityadike/BookYourTicketNow/inputValidation"
 	"strings"
 )
 
