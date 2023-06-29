@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/aadityadike/learn-Go/userInput"
-	"github.com/aadityadike/learn-Go/userValidation"
+	"github.com/aadityadike/BookYourTicketNow/userInput"
+	"github.com/aadityadike/BookYourTicketNow/userValidation"
 	"strings"
 )
 
