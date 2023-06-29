@@ -1,4 +1,4 @@
-package userValidation
+package inputValidation
 
 import "strings"
 
