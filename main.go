@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 	
-	"github.com/aadityadike/BookYourTicketNow/OtherConcepts"
+	"github.com/aadityadike/BookYourTicketNow/otherConcepts"
 	"github.com/aadityadike/BookYourTicketNow/inputValidation"
 	"github.com/aadityadike/BookYourTicketNow/userInput"
 )
@@ -34,7 +34,7 @@ func main() {
 	// for {
 	// Base case
 
-	
+	otherconcepts.Errors()
 
 	if remaining <= 0 {
 		fmt.Println("Feel sorry for you! All Tickets are sold for this year, you can comeback next year")
