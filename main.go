@@ -34,7 +34,7 @@ func main() {
 	// for {
 	// Base case
 
-	otherconcepts.advanceFunction()
+	otherconcepts.Pointers()
 
 	if remaining <= 0 {
 		fmt.Println("Feel sorry for you! All Tickets are sold for this year, you can comeback next year")

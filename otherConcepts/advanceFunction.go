@@ -2,9 +2,9 @@ package otherconcepts
 
 import "fmt"
 
-func advanceFunction() {
+func AdvanceFunction() {
 	mathSquare := square(multiplyItself)
-	fmt.Println(mathSquare(5))
+	fmt.Println(mathSquare(6))
 }
 
 func multiplyItself(i int) int {
