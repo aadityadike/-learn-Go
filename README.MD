@@ -1,57 +1,79 @@
-# Learning Go
+# Learning GoLang
 
-## Sync goroutines with waitGroups:
+## Sync Goroutines with WaitGroups:
 
-In sync package we have waitGroup Struct that contain few function like Add, Wait & Done this functions can be useful to sync with main function. In our case if we remove for loop. the main function did not wait for other goroutine functions to execute it executes line by line and since the goroutine has created a new thread the main function skip that execution and follow the flow of program.
+In Go, the `sync` package provides the `WaitGroup` struct, which contains a few functions like `Add`, `Wait`, and `Done`. These functions are useful for synchronizing goroutines with the main function. If we remove the for loop, the main function won't wait for other goroutine functions to execute. It will execute line by line, and since the goroutine has created a new thread, the main function may skip that execution and follow the flow of the program.
 
-## What is the difference between other languages and go in terms of concurrency?
+## What is the difference between Go and other languages in terms of concurrency?
 
 ### Goroutine
 
-- Go is using, what's called a "Green Thread".
-- Abstraction of an actual Thread.
-- Managed by the go runtime, we are only interacting with high level goroutine.
-- cheaper & Lightweight
+- Go uses what's called a "Goroutine," which is an abstraction of an actual thread.
+- Goroutines are managed by the Go runtime, and developers interact with high-level goroutines.
+- Goroutines are cheaper and lightweight compared to OS threads.
 
 ### OS Thread
 
-- Managed by kernel.
-- Are Hardware dependent
-- achieving concurrency can be complex compare to Go
-- high start up time
+- OS threads are managed by the kernel.
+- They are hardware-dependent and achieving concurrency with OS threads can be more complex compared to Go's goroutines.
+- OS threads have a higher start-up time.
 
 ## Defer Keyword
 
-Defer keyword means, we are telling function to execute the particular line of code or function at the end or before return statement.
-The benefit is that no matter from where we going to return, the defer code will execute just before the function execution finishes.
+The `defer` keyword in Go is used to instruct a function to execute a particular line of code or function at the end or just before the return statement. The benefit of using `defer` is that no matter where we return from within the function, the `defer` code will always execute just before the function execution finishes.
 
 ## Go Build
 
-Go Build creates, an executable file that we can run on any machine.
-and we can execute that file with command `./executable_name`
+The `go build` command creates an executable file that can be run on any machine. To execute the compiled file, you can use the command `./executable_name`.
 
 ## Go Install
 
-Go Install will Install your code globally, in short you don't need to specify path and you can code file from any directory.
-command after installing file in your machine to run executable `executable_name` from any directory.
+The `go install` command installs your Go code globally, making it accessible from any directory without the need to specify the path. After installing the file on your machine, you can run the executable using its name from any directory.
 
 ## Go Mod
 
-Go Mod is dependence management tool in go, since go accepts remote urls to import depnedinces we need specify remote url.
+Go Mod is a dependency management tool in Go. As Go allows importing dependencies from remote URLs, we need to specify the remote URL.
 
 ### "replace" Keyword in Go Mod
 
-replace key word will follow the following syntax : `remote_URL_of_package_that you_want_to_import => PATH_of_local_package`
-
-what this will do is, Go will not go on remote url to find package it will get package from the path of local environment that we specify.
-if the right-hand side of a replace directive is a filesystem path, then the target must have a go.mod file at that location. If the go.mod file is not present, you can create one with go mod init.
+The `replace` keyword follows the following syntax: `remote_URL_of_package => PATH_of_local_package`. This directive tells Go to fetch the package from the specified local path instead of the remote URL. If the right-hand side of a replace directive is a filesystem path, then the target must have a `go.mod` file at that location. If the `go.mod` file is not present, you can create one with `go mod init`.
 
 ### "require" Keyword in Go Mod
 
-replace key word will follow the following syntax : `remote_URL_of_package_that you_want_to_import`
+The `require` keyword follows the following syntax: `remote_URL_of_package`. This is used to import another module or package into your project.
 
-This is used to import a other module or package.
+## Go Get
 
-## Go get
+The `go get remote_URL` command is used to fetch third-party dependencies and download them into your local environment.
 
-`Go get remote_URL` this will basically get third party dependencies in your local environment.
+## Concurrency VS Synchronous
+
+### Synchronous Code
+
+Synchronous code is executed sequentially, one after the other. Each operation must wait for the previous one to complete before proceeding.
+
+### Concurrent Code
+
+Concurrent code, in Go, refers to code that can handle multiple tasks simultaneously through goroutines and channels, achieving concurrency.
+
+## Channels
+
+**_Creating A Channel:_**
+
+```go
+ch := make(chan int)
+```
+
+**_Sending Data To A Channel:_**
+
+```go
+ch <- 30
+```
+
+**_Receiving Data From A Channel:_**
+
+```go
+v := <- ch
+```
+
+Channels are used for communication and synchronization between goroutines. They allow data to be passed between goroutines securely.
