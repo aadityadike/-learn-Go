@@ -1,3 +1,3 @@
-module github.com/aadityadike/BookYourTicketNow
+module github.com/aadityadike/Learn-GoLang
 
 go 1.20

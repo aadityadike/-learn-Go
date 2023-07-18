@@ -1,4 +1,4 @@
-package otherconcepts
+package Learnings
 
 import "fmt"
 

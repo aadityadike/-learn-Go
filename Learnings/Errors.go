@@ -1,4 +1,4 @@
-package otherconcepts
+package Learnings
 
 import (
 	"errors"
@@ -13,7 +13,7 @@ func Errors() {
 	fmt.Printf("User: %v", variable)
 }
 
-func getUser() (string, error){
+func getUser() (string, error) {
 	user := fmt.Sprint("aditya dike")
 	return user, errors.New("something is wrong")
 }
